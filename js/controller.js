@@ -2,12 +2,14 @@ var app = angular.module('myApp', []);
 
 
   app.controller('myCtrl', function($scope) {
-    var numbers = 20;
+    var numbers = 10;
     $scope.wrong = 0;
     $scope.right = 0;
     $scope.max = 10;
     $scope.max1 = parseInt(numbers/2);
     $scope.max2 = parseInt(numbers/2);
+    $scope.num1 = parseInt(Math.random()*$scope.max1);
+    $scope.num2 = parseInt(Math.random()*$scope.max2);
     $scope.range1 = function() {
       $scope.max2 = numbers - $scope.num1;
       var input = [];
@@ -56,5 +58,8 @@ var app = angular.module('myApp', []);
       } else {
         $scope.wrong++;
       }
+      $scope.num1 = parseInt(Math.random()*$scope.max1);
+      $scope.num2 = parseInt(Math.random()*$scope.max2);
+      
     };
     });
