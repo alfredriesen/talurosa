@@ -1,8 +1,8 @@
 var app = angular.module('myApp', []);
 
 
-  app.controller('myCtrl', function($scope) {
-    var numbers = 10;
+  app.controller('myCtrl', function($scope, $log) {
+    var numbers = 20;
     $scope.wrong = 0;
     $scope.right = 0;
     $scope.max = 10;
@@ -36,19 +36,28 @@ var app = angular.module('myApp', []);
     $scope.range4 = function() {
       var input = [];
       var data = [];
+      var total = $scope.num2+$scope.num1;
+      var tot_min = total - 2;
+      var tot_max = total + 2;
+      var notIn = false;
+      var val;
       for (var i=0; i<2; i++) {
-        var notIn = false;
+        $log.log("Schleife: " + i);
+        notIn = false;
         while (!notIn) {
           notIn = true;
-          data = [parseInt(Math.random()*numbers), false];
-          if (input.length > 0) {
-            for (var j=0; j<input.length; j++)
-              if (input[j] == data) notIn = false;
-            }
-          input.push(data);
+          val = parseInt(Math.random()*(tot_max - tot_min) + tot_min);
+          $log.log("Wert: " +val);
+          if (i > 0) {
+            for (var j=0; j<i; j++)
+              if (input[j][0] == val || input[j][0] == 0) notIn = false;
+          }
+          if (val == total) notIn = false;
         }
+        data = [val, false];
+        input.push(data);
       }
-      data = [$scope.num2+$scope.num1, true];
+      data = [total, true];
       input.splice(parseInt(Math.random()*(input.length+1)),0,data);
       return input;
     };
@@ -60,6 +69,6 @@ var app = angular.module('myApp', []);
       }
       $scope.num1 = parseInt(Math.random()*$scope.max1);
       $scope.num2 = parseInt(Math.random()*$scope.max2);
-      
+
     };
     });

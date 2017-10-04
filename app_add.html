@@ -2,10 +2,11 @@
 <html ng-app="myApp">
 <head><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <script src="js/controller.js"></script>
 </head>
 <body ng-controller="myCtrl">
-  <table width=100% >
+  <table width=100% style="display:none">
   <tr>
   <td><div ><input id="nr1" type="range" min="0" ng-max="max1" max="{{max1}}" value="0" ng-model="num1" class="slider_red"></div></td>
   <td><div ><input id="nr2" type="range" min="0" ng-max="max2" max="{{max2}}" value="0" ng-model="num2" class="slider_blue">
@@ -41,7 +42,7 @@
 
   <table width=100% >
   <tr>
-  <td style="width:25%" ng-repeat="n in range4()"><button style="width:100%; font-size:300%" ng-click="test(n[0])"> - {{n[0]}} - </button></td>
+  <td style="width:25%" ng-repeat="n in range4()"><button class="w3-button w3-white w3-border w3-round-large" style="width:100%; font-size:300%" ng-click="test(n[0])"> - {{n[0]}} - </button></td>
 
   </tr>
 
