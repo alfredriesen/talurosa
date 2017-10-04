@@ -1,0 +1,52 @@
+<!doctype html>
+<html ng-app="myApp">
+<head><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+
+<style>
+
+</style>
+</head>
+<body ng-controller="myCtrl">
+  <table width=100% >
+  <tr>
+  <td><div ><input id="nr1" type="range" min="0" ng-max="max1" max="{{max1}}" value="0" ng-model="num1" class="slider_red"></div></td>
+  <td><div ><input id="nr2" type="range" min="0" ng-max="max2" max="{{max2}}" value="0" ng-model="num2" class="slider_blue">
+  </div></td>
+
+  </tr>
+
+  </table>
+  <table id="result" width=100% >
+  <tr>
+  <td><div class="one" style="background-color:#ffe6e6">{{num1}}</div></td>
+  <td><div class="one">+</div></td>
+  <td><div class="one" style="background-color:#e6e6ff">{{num2}}</div></td>
+  <td><div class="one">=</div></td>
+  <td><div class="one" style="background-color:#e6ffe6">{{num1+num2}}</div></td>
+
+  </tr>
+
+
+  </table>
+  <div  class='box'  ng-repeat="n in range1()">
+  <div style="display:table-cell;vertical-align:middle;">
+    <div  class='content1' style="text-align:center;">{{$index+1}}</div>
+  </div>
+</div>
+
+  <div class='box' ng-repeat="n in range2()">
+  	<div class='content2'>{{$index+1}}</div>
+  </div>
+  <div class='box' ng-repeat="n in range3()">
+  	<div class='content3'></div>
+  </div>
+
+
+
+
+
+  <script>
+  
+        </script>
+        </body>
+        </html>
