@@ -3,9 +3,6 @@
 <head><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <script src="js/controller.js"></script>
-<style>
-
-</style>
 </head>
 <body ng-controller="myCtrl">
   <table width=100% >
@@ -23,7 +20,7 @@
   <td><div class="one">+</div></td>
   <td><div class="one" style="background-color:#e6e6ff">{{num2}}</div></td>
   <td><div class="one">=</div></td>
-  <td><div class="one" style="background-color:#e6ffe6">{{num1+num2}}</div></td>
+  <td><div class="one" style="background-color:#e6ffe6">?</div></td>
 
   </tr>
 
@@ -42,12 +39,27 @@
   	<div class='content3'></div>
   </div>
 
+  <table width=100% >
+  <tr>
+  <td style="width:25%" ng-repeat="n in range4()"><button style="width:100%; font-size:300%" ng-click="test(n[0])"> - {{n[0]}} - </button></td>
 
+  </tr>
 
+  </table>
+  <table width=100% >
+  <tr>
+  <td><div ><input id="wrong" type="range" min="0" ng-max="max" max="{{max}}" value="0" ng-model="wrong" class="slider_red" disabled></div></td>
+  </div></td>
 
+  </tr>
+  <tr>
+  <td><div ><input id="right" type="range" min="0" ng-max="max" max="{{max}}" value="0" ng-model="right" class="slider_blue" disabled>
+  </div></td>
 
-  <script>
+  </tr>
 
-        </script>
-        </body>
-        </html>
+  </table>
+<span>Wrong Answers: {{wrong}}</span>
+<span>Right Answers: {{right}}</span>
+</body>
+</html>
