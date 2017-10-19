@@ -1,0 +1,22 @@
+{
+  "name": "talurosa.js",
+  "version": "1.0.0",
+  "description": "Some apps to help learn maths an read",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alfredriesen/talurosa.git"
+  },
+  "keywords": [
+    "add"
+  ],
+  "author": "Alfred Riesen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alfredriesen/talurosa/issues"
+  },
+  "homepage": "https://github.com/alfredriesen/talurosa#readme"
+}
